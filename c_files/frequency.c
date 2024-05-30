@@ -49,7 +49,7 @@ int main(void){
             if (!check[i])
             {
                 // count the frequency of the character
-                for (size_t j = 0; j < input[j]; j++)
+                for (size_t j = 0; input[j]; j++)
                 {
                     if (input[i] == input[j])
                     {
