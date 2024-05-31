@@ -14,7 +14,6 @@
 typedef struct data
 {
     char word[3000];
-    int length;
 } data;
 
 // function prototypes
