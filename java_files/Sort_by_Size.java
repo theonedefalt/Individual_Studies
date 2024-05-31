@@ -1,3 +1,11 @@
+/**
+ * @file Sort_by_Size.java
+ * @brief This program sorts the words in a sentence by their length.
+ * @details The program reads the number of cases and for each case reads a sentence and sorts the words in the sentence by their length.
+ * @author Arthur Clemente Machado
+ * @date 2024-05-31
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,9 +26,12 @@ class Data {
     }
 }
 
+// Sort_by_Size
 public class Sort_by_Size {
+
     private static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
+    // readInt, readString, readLine
     public static int readInt() {
         int i = -1;
         try {
@@ -63,28 +74,36 @@ public class Sort_by_Size {
     }
 
     public static void main(String[] args) {
+        // variable declarations
         int N = 0, j;
         String input;
         String[] token;
         Data[] words = new Data[60];
 
+        // read N
         N = readInt();
 
+        // for each test case
         for (int i = 0; i < N; i++) {
+            // initialize variables
             Arrays.fill(words, new Data());
             input = "";
             token = null;
 
+            // read input
             input = readLine();
 
+            // split input
             token = input.split(" ");
             j = 0;
             for (; j < token.length; j++) {
                 words[j] = new Data(token[j]);
             }
 
+            // sort words by size
             mergeSort(words, 0, j);
 
+            // print sorted words
             for (int k = 0; k < j; k++) {
                 if (k > 0 && k != j) {
                     System.out.print(" ");
